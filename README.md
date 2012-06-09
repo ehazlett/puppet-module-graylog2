@@ -12,8 +12,9 @@ Parameters
 
 ```
 class { 'graylog2':
-  server_name       => 'mygraylogserver',
-  external_hostname => 'graylog.mydomain.com',
+  server_name         => 'mygraylogserver',
+  external_hostname   => 'graylog.mydomain.com',
+  update_local_syslog => false,
 } 
 ```
 
