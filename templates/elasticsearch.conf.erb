@@ -1,0 +1,5 @@
+[program:elasticsearch]
+command=<%= scope.lookupvar('graylog2::params::elasticsearch_dir') %>/bin/elasticsearch -f
+directory=<%= scope.lookupvar('graylog2::params::elasticsearch_dir') %>
+user=root
+stopsignal=QUIT

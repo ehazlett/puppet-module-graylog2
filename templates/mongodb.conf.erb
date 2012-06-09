@@ -1,0 +1,5 @@
+[program:mongodb]
+command=<%= scope.lookupvar('graylog2::params::mongodb_dir') %>/bin/mongod --rest --dbpath <%= scope.lookupvar('graylog2::params::mongodb_data_dir') %>
+directory=<%= scope.lookupvar('graylog2::params::mongodb_dir') %>
+user=root
+stopsignal=QUIT

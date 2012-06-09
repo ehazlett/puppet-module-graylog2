@@ -1,0 +1,5 @@
+[program:graylog-server]
+command=java -jar graylog2-server.jar 
+directory=<%= scope.lookupvar('graylog2::params::graylog_server_dir') %>
+user=root
+stopsignal=QUIT

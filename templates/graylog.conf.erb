@@ -1,0 +1,6 @@
+[program:graylog-web]
+command=/usr/bin/ruby script/rails server
+    -e production -p 3000
+directory=<%= scope.lookupvar('graylog2::params::graylog_dir') %>
+user=root
+stopsignal=QUIT
