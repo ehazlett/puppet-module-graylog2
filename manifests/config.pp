@@ -3,7 +3,7 @@ class graylog2::config inherits graylog2::params {
     path      => "${::path}", 
     logoutput => on_failure,
   }
-  if ($graylog2::params::update_local_syslog) {
+  if ($graylog2::update_local_syslog) {
     if ! defined(Package["rsyslog"]) { package { "rsyslog": ensure => installed, } }
     if ! defined(Service["rsyslog"]) { service { "rsyslog": ensure => running, } }
     file { "graylog2::config::default_syslog_conf":

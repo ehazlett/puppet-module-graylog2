@@ -1,5 +1,5 @@
 name    'ehazlett-graylog2'
-version '0.0.1'
+version '0.0.2'
 source ''
 author 'ehazlett'
 license 'Apache License, Version 2.0'
