@@ -1,8 +1,8 @@
 class graylog2::package {
   require "graylog2::config"
 
-  Exec { 
-    path      => "${::path}", 
+  Exec {
+    path      => "${::path}",
     logoutput => on_failure,
   }
   if ! defined(Package["autoconf"]) { package { "autoconf": ensure => installed, } }
@@ -30,8 +30,8 @@ class graylog2::package {
   }
   exec { "graylog2::package::update_supervisor":
     command     => "supervisorctl update",
-    require     => [ Package["openjdk-6-jre"], Package["ruby"], File["graylog2::package::mongodb_data"], 
-      File["graylog2::package::elasticsearch_data"], File["graylog2::package::graylog_general_config"], File["graylog2::package::graylog_email_config"], 
+    require     => [ Package["openjdk-6-jre"], Package["ruby"], File["graylog2::package::mongodb_data"],
+      File["graylog2::package::elasticsearch_data"], File["graylog2::package::graylog_general_config"], File["graylog2::package::graylog_email_config"],
       File["graylog2::package::graylog_supervisor_config"], File["graylog2::package::graylog2_web_config"], File["graylog2::package::graylog2_server_config"] ],
     refreshonly => true,
   }
@@ -142,7 +142,7 @@ class graylog2::package {
     cwd         => "${graylog2::params::graylog_dir}",
     command     => "bundle install",
     user        => root,
-    require     => [ Package["bundler"], Exec["graylog2::package::extract_graylog"] ],
+    require     => [ Package["bundler"], Exec["graylog2::package::extract_graylog"], Package["ruby-dev"] ],
     refreshonly => true,
   }
   exec { "graylog2::package::wget_graylog_server":
