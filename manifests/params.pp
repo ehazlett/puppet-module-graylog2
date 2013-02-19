@@ -10,5 +10,5 @@ class graylog2::params {
   $mongodb_dir = "/opt/mongodb"
   $mongodb_data_dir = "/opt/mongodb_data"
   $elasticsearch_dir = "/opt/elasticsearch"
-  $elasticsearch_url = "https://github.com/downloads/elasticsearch/elasticsearch/elasticsearch-0.18.6.tar.gz"
+  $elasticsearch_url = "https://github.com/elasticsearch/elasticsearch/archive/v0.20.5.tar.gz"
 }
